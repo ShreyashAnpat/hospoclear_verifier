@@ -58,7 +58,6 @@ public class loginUser extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent (loginUser.this , RegisterUser.class));
-                Toast.makeText(loginUser.this, "hiii", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
