@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "794577572838",
+    "project_id": "hospoclear",
+    "storage_bucket": "hospoclear.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794577572838:android:df6c10f237303b1a26fc27",
+        "android_client_info": {
+          "package_name": "com.cctpl.hospoclear"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794577572838-e9piu5bl2r7lc9av0ek7f3chv5vps3n2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cctpl.hospoclear",
+            "certificate_hash": "211f239090956880a153cdcb93629e84b310fb81"
+          }
+        },
+        {
+          "client_id": "794577572838-pd0786pgplrfhoreohqss0kdmaeiat4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZpQQm221efWhM4KvADOdwgHG7kbICPk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794577572838-pd0786pgplrfhoreohqss0kdmaeiat4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

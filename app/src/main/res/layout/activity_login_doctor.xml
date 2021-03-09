@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.addNewHospital.login_doctor">
+    <ScrollView
+        android:layout_marginTop="-50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="650dp"
+                android:layout_gravity="center"
+                android:layout_height="400dp"
+                android:layout_marginTop="-40dp"
+                app:lottie_rawRes="@raw/hospital"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"/>
+
+            <TextView
+                android:layout_marginTop="-80dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Add new hospital"
+                android:textColor="@color/purple_700"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Sign In with phone Number "
+                android:layout_marginTop="10dp"/>
+
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/otp_background"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:padding="5dp"
+                android:gravity="center"
+                >
+
+                <com.hbb20.CountryCodePicker
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:ccp_showFlag="false"
+                    app:ccpDialog_showPhoneCode="true"
+                    app:ccpDialog_showTitle="false"
+                    app:ccp_showArrow="false"
+                    app:ccp_showNameCode="false" />
+
+
+
+                <EditText
+                    android:id="@+id/Phone_number"
+                    android:focusable="true"
+                    android:focusedByDefault="true"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:hint="Mobile Number"
+                    />
+
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/Continue"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="verify"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

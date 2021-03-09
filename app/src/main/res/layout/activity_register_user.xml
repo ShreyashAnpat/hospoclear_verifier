@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginUser.RegisterUser">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="Sign Up"
+                android:textColor="#2E2D2D"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Please register to continue"
+                android:maxLines="1"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:inputType="textPersonName"
+                android:id="@+id/userName"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:hint="User Name"
+                android:background="@drawable/phone_number_background"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:maxLines="1"
+                android:paddingLeft="10dp"/>
+
+            <EditText
+                android:inputType="textPostalAddress"
+                android:id="@+id/location"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:minHeight="45dp"
+                android:hint="Location"
+                android:maxLines="3"
+                android:background="@drawable/phone_number_background"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="10dp"/>
+
+            <LinearLayout
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:background="@drawable/phone_number_background"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/cpp1"
+                    app:ccp_showArrow="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ccp_showFlag="false"
+                    android:layout_marginLeft="10dp"/>
+
+                <EditText
+                    android:maxLines="1"
+                    android:background="@color/white"
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:hint="Phone number"
+                    android:inputType="phone"
+                    android:layout_gravity="center"
+                    android:paddingLeft="10dp"/>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/registerUser"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:text="Register User"/>
+
+            <LinearLayout
+                android:id="@+id/signIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account? "/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign in"
+                    android:textColor="@color/purple_700"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
