@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.e.hospoclear.MainActivity;
 import com.e.hospoclear.R;
@@ -52,10 +53,12 @@ public class loginUser extends AppCompatActivity {
             }
         });
 
+
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent (loginUser.this , RegisterUser.class));
+                Toast.makeText(loginUser.this, "hiii", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
