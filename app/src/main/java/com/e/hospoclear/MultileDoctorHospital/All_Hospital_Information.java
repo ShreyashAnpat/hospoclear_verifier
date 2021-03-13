@@ -1,6 +1,7 @@
 package com.e.hospoclear.MultileDoctorHospital;
 
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -69,7 +70,7 @@ public class All_Hospital_Information extends Fragment {
                 } else if (TextUtils.isEmpty(Ambulance)) {
                     mAmbulance.setError("Empty");
                 } else {
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    Editor editor = sharedPreferences.edit();
                     editor.putString("HospitalName", HospitalName);
                     editor.putString("City", City);
                     editor.putString("State", State);
@@ -82,6 +83,7 @@ public class All_Hospital_Information extends Fragment {
                 }
             }
         });
+
         return  view ;
     }
 }

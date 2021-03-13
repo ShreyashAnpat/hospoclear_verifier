@@ -3,6 +3,7 @@ package com.e.hospoclear.SingleDoctorHospital;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+
+import static android.content.ContentValues.TAG;
 
 public class RegisterOtp extends Fragment {
 
@@ -151,7 +154,8 @@ public class RegisterOtp extends Fragment {
 
         HashMap<String,Object> location = new HashMap<>();
         location.put("City",City);
-        firebaseFirestore.collection("Locations").document(City).set(location);
+        Log.d(TAG, "AddData: " + City);
+        //firebaseFirestore.collection("Locations").document(City).set(location);
 
         HashMap<String, Object> doctorData = new HashMap<>();
         doctorData.put("DoctorName",DoctorName);
