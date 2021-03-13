@@ -37,6 +37,7 @@ public class RegisterOtp extends Fragment {
     Button mBtnVerifyOtp;
     SharedPreferences sharedPreferences;
     EditText mGetOtp;
+    ProgressBar progressBar;
     String OtpId;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
@@ -49,6 +50,7 @@ public class RegisterOtp extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         mBtnVerifyOtp = view.findViewById(R.id.verify);
         mGetOtp = view.findViewById(R.id.otp);
+        progressBar = view.findViewById(R.id.loader);
 
         sharedPreferences = getContext().getSharedPreferences("HospitalData",0);
 
@@ -69,6 +71,7 @@ public class RegisterOtp extends Fragment {
                     mGetOtp.setError("OTP will be 6 digit");
                 }else {
                     mBtnVerifyOtp.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
                     PhoneAuthCredential credential = PhoneAuthProvider.getCredential(OtpId,mGetOtp.getText().toString());
                     signInWithPhoneAuthCredential(credential);
                 }
@@ -114,6 +117,7 @@ public class RegisterOtp extends Fragment {
                         } else {
                             mGetOtp.setError("Re-Enter OTP");
                             mBtnVerifyOtp.setVisibility(View.VISIBLE);
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
@@ -171,9 +175,16 @@ public class RegisterOtp extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(getContext(), "Doctor add successfully !!", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
         });
 
+        signOut();
+
+    }
+
+    private void signOut() {
+        firebaseAuth.signOut();
     }
 }
