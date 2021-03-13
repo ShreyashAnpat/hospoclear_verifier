@@ -142,7 +142,8 @@ public class RegisterOtp extends Fragment {
         hospitalData.put("Ambulance",Ambulance);
         hospitalData.put("TimeStamp",System.currentTimeMillis());
         hospitalData.put("UserId",firebaseAuth.getCurrentUser().getUid());
-
+        hospitalData.put("Status" , "Single");
+        hospitalData.put("isUser" , "1");
         firebaseFirestore.collection("Hospitals").document(firebaseAuth.getCurrentUser().getUid())
                 .set(hospitalData).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -168,6 +169,7 @@ public class RegisterOtp extends Fragment {
         doctorData.put("Speciality",Speciality);
         doctorData.put("TimeStamp",System.currentTimeMillis());
         doctorData.put("HospitalId",firebaseAuth.getCurrentUser().getUid());
+        doctorData.put("isUser" ,"3");
 
         firebaseFirestore.collection("Doctors").document(firebaseAuth.getCurrentUser().getUid())
                 .set(doctorData).addOnCompleteListener(new OnCompleteListener<Void>() {

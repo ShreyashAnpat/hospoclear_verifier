@@ -16,16 +16,27 @@ import android.view.ViewGroup;
 import com.e.hospoclear.Adapters.TabAdapter;
 import com.e.hospoclear.R;
 import com.google.android.material.tabs.TabLayout;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 01e343cb988ff3ad2a17aae0437a21231f335e21
 
 public class HomeFragment extends Fragment {
 
     TabLayout tabLayout ;
     ViewPager viewPager ;
 
+<<<<<<< HEAD
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+=======
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+>>>>>>> 01e343cb988ff3ad2a17aae0437a21231f335e21
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
@@ -65,7 +76,10 @@ public class HomeFragment extends Fragment {
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 01e343cb988ff3ad2a17aae0437a21231f335e21
         return view;
     }
 }
