@@ -34,12 +34,10 @@ public class RegisterOtp_1 extends Fragment {
 
     String mPhoneNumber;
     Button mBtnVerifyOtp;
-    SharedPreferences sharedPreferences;
     EditText mGetOtp;
     String OtpId;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
-    ProgressDialog pd ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,8 +49,6 @@ public class RegisterOtp_1 extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         mBtnVerifyOtp = view.findViewById(R.id.verify);
         mGetOtp = view.findViewById(R.id.otp);
-
-        sharedPreferences = getContext().getSharedPreferences("MultipleHospitalData",0);
 
         Bundle bundle = this.getArguments();
         if (bundle!=null){
@@ -122,6 +118,9 @@ public class RegisterOtp_1 extends Fragment {
     }
 
     private void AddData() {
+
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences("MultipleHospitalData",0);
+
         String HospitalName = sharedPreferences.getString("HospitalName",null);
         String City = sharedPreferences.getString("City",null);
         String State = sharedPreferences.getString("State",null);

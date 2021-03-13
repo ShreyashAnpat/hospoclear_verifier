@@ -5,12 +5,25 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.HomeFragment">
 
+<<<<<<< HEAD
     <!-- TODO: Update blank fragment layout -->
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tabLayout"
         />
+=======
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout"/>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_below="@id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"
+        android:id="@+id/pageViewer"/>
+>>>>>>> a2aad467ee4157921acc1ae2a25cf8d367c622cc
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

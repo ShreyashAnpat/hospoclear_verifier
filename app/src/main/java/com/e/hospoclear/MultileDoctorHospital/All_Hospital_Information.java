@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import android.widget.EditText;
 
 import com.e.hospoclear.R;
 import com.e.hospoclear.SingleDoctorHospital.RegisterWithNoFragment;
+
+import static android.content.ContentValues.TAG;
 
 
 public class All_Hospital_Information extends Fragment {
@@ -71,6 +74,7 @@ public class All_Hospital_Information extends Fragment {
                     mAmbulance.setError("Empty");
                 } else {
                     Editor editor = sharedPreferences.edit();
+                    Log.d(TAG, "onClick: " + HospitalName + "\n" + City );
                     editor.putString("HospitalName", HospitalName);
                     editor.putString("City", City);
                     editor.putString("State", State);
@@ -78,7 +82,7 @@ public class All_Hospital_Information extends Fragment {
                     editor.putString("Ambulance", Ambulance);
                     editor.commit();
 
-                    Fragment fragment = new RegisterWithNoFragment();
+                    Fragment fragment = new RegisterWithNumber();
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
                 }
             }
