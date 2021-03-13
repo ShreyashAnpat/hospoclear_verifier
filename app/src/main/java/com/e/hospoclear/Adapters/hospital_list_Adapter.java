@@ -53,10 +53,7 @@ public class hospital_list_Adapter extends RecyclerView.Adapter<hospital_list_Ad
         TextView hospitalName , city , state , phoneNo ;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            hospitalName = itemView.findViewById(R.id.textView);
-            city = itemView.findViewById(R.id.textView2);
-            state = itemView.findViewById(R.id.textView3);
-            phoneNo = itemView.findViewById(R.id.textView4);
+
         }
     }
 }

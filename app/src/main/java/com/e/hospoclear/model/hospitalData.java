@@ -2,16 +2,34 @@ package com.e.hospoclear.model;
 
 public class hospitalData {
 
-   private String HospitalName ,ContactNumber , City , State ;
+   private String HospitalName ,ContactNumber , City , State,HospitalImgUrl,HospitalId;
 
-    public hospitalData(String hospitalName, String contactNumber, String city, String state) {
+    public hospitalData(String hospitalName, String contactNumber, String city, String state,String hospitalImgUrl,String hospitalId) {
         HospitalName = hospitalName;
         ContactNumber = contactNumber;
         City = city;
         State = state;
+        HospitalImgUrl = hospitalImgUrl;
+        HospitalId = hospitalId;
     }
 
     public hospitalData() {
+    }
+
+    public String getHospitalImgUrl() {
+        return HospitalImgUrl;
+    }
+
+    public void setHospitalImgUrl(String hospitalImgUrl) {
+        HospitalImgUrl = hospitalImgUrl;
+    }
+
+    public String getHospitalId() {
+        return HospitalId;
+    }
+
+    public void setHospitalId(String hospitalId) {
+        HospitalId = hospitalId;
     }
 
     public String getHospitalName() {
