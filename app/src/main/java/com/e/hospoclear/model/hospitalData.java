@@ -9,6 +9,7 @@ public class hospitalData {
         ContactNumber = contactNumber;
         City = city;
         State = state;
+
     }
 
     public hospitalData() {
