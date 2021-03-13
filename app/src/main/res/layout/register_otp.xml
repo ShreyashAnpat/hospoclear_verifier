@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginUser.login_otp">
+    tools:context=".SingleDoctorHospital.RegisterOtp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:inputType="number"
                 android:layout_marginLeft="70dp"
                 android:layout_marginRight="70dp"
-                android:background="@drawable/otp_background"
+                android:background="@drawable/phone_number_background"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
                 android:textSize="20dp"

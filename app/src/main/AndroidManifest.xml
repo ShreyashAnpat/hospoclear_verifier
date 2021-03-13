@@ -9,21 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HospoClear">
-        <activity android:name=".ui.addNewHospital.login_doctor"></activity>
-        <activity android:name=".ui.addNewHospital.personInformation" />
-        <activity android:name=".ui.addNewHospital.register_OTP" />
-        <activity android:name=".LoginUser.RegisterUser" />
-        <activity android:name=".LoginUser.login_otp" />
-        <activity android:name=".LoginUser.loginUser">
+        <activity android:name=".MainActivity"
+            android:label="M-Hosp's" android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" />
     </application>
 
 </manifest>

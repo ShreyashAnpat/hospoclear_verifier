@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MultileDoctorHospital.Register_hospital_22"
+    android:gravity="center">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/text2"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_500"
+        android:text="Fill up all information to complete \nSecond step."
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_large"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/hospitalContactNumber"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:hint="Hospital Contact Number"
+        android:background="@drawable/phone_number_background"
+        android:layout_below="@id/text2"
+        android:inputType="phone"
+        android:maxLength="14"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        tools:ignore="HardcodedText"
+        android:importantForAutofill="no" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@id/hospitalContactNumber"
+        android:text="In hospital have an ambulance ?"
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_small"
+        android:layout_below="@id/checkbox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

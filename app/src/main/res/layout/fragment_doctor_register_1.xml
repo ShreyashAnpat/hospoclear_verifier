@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".SingleDoctorHospital.DoctorRegister_1">
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_500"
+        android:text="Fill up all information to complete \nLast step."
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_large"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/doctorName"
+        android:layout_below="@id/text2"
+        android:inputType="none"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Doctor Name"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/phone_number_background"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"
+        tools:ignore="HardcodedText"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/doctorQualification"
+        android:inputType="none"
+        android:layout_below="@id/doctorName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Qualification"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/phone_number_background"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"
+        tools:ignore="HardcodedText"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/doctorExperience"
+        android:inputType="numberSigned"
+        android:layout_below="@id/doctorQualification"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Experience (In year)"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/phone_number_background"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"
+        tools:ignore="HardcodedText"
+        android:importantForAutofill="no" />
+    <Spinner
+        android:id="@+id/doctorSpeciality"
+        android:layout_below="@id/doctorExperience"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:background="@drawable/phone_number_background"
+        android:layout_marginTop="15dp"
+        tools:ignore="HardcodedText"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_below="@id/doctorSpeciality"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

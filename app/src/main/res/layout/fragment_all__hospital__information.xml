@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MultileDoctorHospital.All_Hospital_Information"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please confirm following details"
+                android:layout_centerHorizontal="true"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_small"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginTop="20dp"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_below="@id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- Hospital Information --"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_gravity="center_horizontal"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hospital Name*"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="@dimen/text_size_extra_small"
+                    android:layout_below="@id/text"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/hospitalName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/phone_number_background"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City Name*"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="@dimen/text_size_extra_small"
+                    android:layout_below="@id/text"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/cityName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/phone_number_background"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State Name*"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="@dimen/text_size_extra_small"
+                    android:layout_below="@id/text"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/phone_number_background"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hospital Contact Number*"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="@dimen/text_size_extra_small"
+                    android:layout_below="@id/text"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/hospitalContactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:inputType="phone"
+                    android:background="@drawable/phone_number_background"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ambulance*"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="@dimen/text_size_extra_small"
+                    android:layout_below="@id/text"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/ambulance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@drawable/phone_number_background"
+                    android:layout_marginTop="5dp"
+                    />
+
+
+
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Submit"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</FrameLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.addNewHospital.login_doctor">
+    tools:context=".SingleDoctorHospital.RegisterWithNoFragment">
     <ScrollView
         android:layout_marginTop="-50dp"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Add new hospital"
+                android:text="Enter Mobile Number"
                 android:textColor="@color/purple_700"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
@@ -68,7 +68,7 @@
 
 
                 <EditText
-                    android:id="@+id/Phone_number"
+                    android:id="@+id/phoneNumber"
                     android:focusable="true"
                     android:focusedByDefault="true"
                     android:layout_marginLeft="10dp"
@@ -80,13 +80,10 @@
                     android:hint="Mobile Number"
                     />
 
-
             </LinearLayout>
 
-
-
             <Button
-                android:id="@+id/Continue"
+                android:id="@+id/btnContinue"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="verify"

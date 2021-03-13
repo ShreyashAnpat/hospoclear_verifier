@@ -1,43 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".Fragments.HomeFragment">
 
+    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:background="@color/purple_500"
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hospitals List"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:paddingTop="18dp"
-        android:paddingBottom="18dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="10dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Home Fragment" />
 
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:layout_editor_absoluteX="68dp"
-        android:layout_marginTop="60dp">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/HospitalList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            tools:layout_editor_absoluteX="31dp" />
-    </LinearLayout>
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
