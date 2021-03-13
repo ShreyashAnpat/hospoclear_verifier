@@ -9,12 +9,8 @@ public class hospitalData {
         ContactNumber = contactNumber;
         City = city;
         State = state;
-<<<<<<< HEAD
         HospitalImgUrl = hospitalImgUrl;
         HospitalId = hospitalId;
-=======
-
->>>>>>> 63f17da1c48c4c95d6c56c1c64ef72f90c2e0064
     }
 
     public hospitalData() {
