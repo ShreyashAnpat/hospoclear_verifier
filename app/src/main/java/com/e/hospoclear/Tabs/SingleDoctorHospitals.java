@@ -50,7 +50,6 @@ public class SingleDoctorHospitals extends Fragment {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                if (!value.isEmpty()){
-                   Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show();
                    for (DocumentSnapshot doc : value.getDocuments()){
                        HospitalData mHospitalData = doc.toObject(HospitalData.class) ;
                        hospitalDataList.add(mHospitalData);

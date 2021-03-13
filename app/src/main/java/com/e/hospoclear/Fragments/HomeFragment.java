@@ -29,9 +29,8 @@ public class HomeFragment extends Fragment {
 
         tabLayout = view.findViewById(R.id.tabLayout);
         viewPager = view.findViewById(R.id.viewPager);
-
-        tabLayout.addTab(tabLayout.newTab().setText("Single Doctor"));
-        tabLayout.addTab(tabLayout.newTab().setText("Multiple Doctor"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.person));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.group));
 
         TabAdapter adapter = new TabAdapter(getChildFragmentManager() , FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, tabLayout.getTabCount());
         viewPager.setAdapter(adapter);

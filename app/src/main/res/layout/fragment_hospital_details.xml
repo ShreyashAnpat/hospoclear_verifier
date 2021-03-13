@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="56dp">
+        android:layout_marginTop="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -241,7 +241,8 @@
                 android:layout_below="@id/contactDetails"
                 android:layout_margin="10dp"
                 app:cardElevation="10dp"
-                app:cardCornerRadius="20dp">
+                app:cardCornerRadius="20dp"
+                android:visibility="gone">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
