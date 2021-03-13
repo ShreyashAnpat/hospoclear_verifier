@@ -10,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.e.hospoclear.R;
-import com.e.hospoclear.model.hospitalData;
+import com.e.hospoclear.model.HospitalData;
 
 import java.util.List;
 
-public class Hospital_list_Adapter extends RecyclerView.Adapter<Hospital_list_Adapter.ViewHolder> {
+public class Hospital_List_Adapter extends RecyclerView.Adapter<Hospital_List_Adapter.ViewHolder> {
 
     Context context ;
-    List<hospitalData> dataList ;
+    List<HospitalData> dataList ;
 
-    public Hospital_list_Adapter(List<hospitalData> dataList) {
+    public Hospital_List_Adapter(List<HospitalData> dataList) {
         this.dataList = dataList;
     }
 

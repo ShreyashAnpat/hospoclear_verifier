@@ -1,10 +1,10 @@
 package com.e.hospoclear.model;
 
-public class hospitalData {
+public class HospitalData {
 
    private String HospitalName ,ContactNumber , City , State,HospitalImgUrl,HospitalId;
 
-    public hospitalData(String hospitalName, String contactNumber, String city, String state,String hospitalImgUrl,String hospitalId) {
+    public HospitalData(String hospitalName, String contactNumber, String city, String state, String hospitalImgUrl, String hospitalId) {
         HospitalName = hospitalName;
         ContactNumber = contactNumber;
         City = city;
@@ -13,7 +13,7 @@ public class hospitalData {
         HospitalId = hospitalId;
     }
 
-    public hospitalData() {
+    public HospitalData() {
     }
 
     public String getHospitalImgUrl() {
