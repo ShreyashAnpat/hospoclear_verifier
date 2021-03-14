@@ -230,6 +230,28 @@
                         android:layout_below="@id/hospitalContactNumber"
                         tools:ignore="HardcodedText,UseCompatTextViewDrawableXml" />
 
+                    <TextView
+                        android:id="@+id/availableDr"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/purple_500"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/hospitalEmail"
+                        android:layout_marginTop="0dp"
+                        android:text="Available Doctor"
+                        android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"/>
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentBottom="true"-->
+
+<!--                        android:layout_marginStart="0dp"-->
+<!--                        android:layout_marginBottom="10dp"-->
+<!--                        android:layout_toEndOf="@+id/availableDr"-->
+<!--                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />-->
+
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>

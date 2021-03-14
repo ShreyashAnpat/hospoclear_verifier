@@ -3,6 +3,7 @@ package com.e.hospoclear.Adapters;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ import com.e.hospoclear.R;
 import com.e.hospoclear.model.HospitalData;
 
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 public class Hospital_List_Adapter extends RecyclerView.Adapter<Hospital_List_Adapter.ViewHolder> {
 
@@ -41,7 +44,7 @@ public class Hospital_List_Adapter extends RecyclerView.Adapter<Hospital_List_Ad
         String HospitalName = dataList.get(position).getHospitalName();
         String PhoneNumber = dataList.get(position).getContactNumber();
         String Address = dataList.get(position).getCity() + " "+dataList.get(position).getState() ;
-        String HospitalId = dataList.get(position).getHospitalId();
+        String HospitalId = dataList.get(position).getUserId();
 
         holder.hospitalName.setText(HospitalName);
         holder.hospitalAddress.setText(Address);
@@ -54,6 +57,7 @@ public class Hospital_List_Adapter extends RecyclerView.Adapter<Hospital_List_Ad
                 Bundle bundle = new Bundle();
                 bundle.putInt("Position" , position);
                 bundle.putString("HospitalId" , HospitalId);
+                Log.d(TAG, "onClick: " + HospitalId);
                 bundle.putString("HospitalName" , HospitalName);
                 bundle.putString("PhoneNumber" , PhoneNumber);
                 bundle.putString("Address" , Address);

@@ -22,38 +22,42 @@ import static android.content.ContentValues.TAG;
 
 public class HospitalDetailsFragment extends Fragment {
 
-    TextView hospitalName ,hospitalContactNumber ,hospitalEmail ,hospitalAddress ;
-    List<HospitalData> DataList ;
-    String hospitalId ;
-    int position ;
+    TextView hospitalName ,hospitalContactNumber ,hospitalEmail ,hospitalAddress  , availableDoctors;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_hospital_details, container, false);
-        hospitalAddress = view.findViewById(R.id.hospitalName);
+        hospitalAddress = view.findViewById(R.id.hospitalAddress);
         hospitalContactNumber = view.findViewById(R.id.hospitalContactNumber);
         hospitalEmail = view.findViewById(R.id.hospitalEmail);
         hospitalName = view.findViewById(R.id.hospitalName);
+        availableDoctors = view.findViewById(R.id.availableDr);
+
         Bundle bundle = getArguments();
-        position = bundle.getInt("Position");
-
-
-
-
-
-
+        String HospitalId = bundle.getString("HospitalId");
         String HospitalName = bundle.getString("HospitalName");
         String HospitalContactNumber = bundle.getString("PhoneNumber");
-
         String HospitalAddress = bundle.getString("Address");
 
-        Log.d(TAG, "onCreateView: " + HospitalAddress);
+
+        availableDoctors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment  = new AvailableDoctorsList();
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("hospitalId" , HospitalId);
+                fragment.setArguments(bundle1);
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+            }
+        });
+
 
 
         hospitalName.setText(HospitalName);
         hospitalContactNumber.setText(HospitalContactNumber);
-        hospitalAddress.setText(HospitalName);
+        hospitalAddress.setText(HospitalAddress);
 
         return view;
     }
