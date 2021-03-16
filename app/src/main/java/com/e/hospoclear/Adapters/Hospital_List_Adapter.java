@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -16,10 +17,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.e.hospoclear.Fragments.HospitalDetailsFragment;
+import com.e.hospoclear.MultileDoctorHospital.RegisterDr;
 import com.e.hospoclear.R;
 import com.e.hospoclear.model.HospitalData;
 
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.content.ContentValues.TAG;
 
@@ -45,11 +49,12 @@ public class Hospital_List_Adapter extends RecyclerView.Adapter<Hospital_List_Ad
         String PhoneNumber = dataList.get(position).getContactNumber();
         String Address = dataList.get(position).getCity() + " "+dataList.get(position).getState() ;
         String HospitalId = dataList.get(position).getUserId();
+        String status = dataList.get(position).getStatus();
 
         holder.hospitalName.setText(HospitalName);
         holder.hospitalAddress.setText(Address);
         holder.phoneNo.setText(PhoneNumber);
-        holder.hospitalDetail.setOnClickListener(new View.OnClickListener() {
+        holder.hospital_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
@@ -65,6 +70,22 @@ public class Hospital_List_Adapter extends RecyclerView.Adapter<Hospital_List_Ad
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit() ;
             }
         });
+
+        if (status.equals("Single")){
+            holder.addDoctor.setVisibility(View.GONE);
+        }
+
+        holder.addDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment fragment = new RegisterDr();
+                Bundle bundle = new Bundle();
+                bundle.putString("HospitalID" , HospitalId);
+                fragment.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).addToBackStack(null).commit();
+            }
+        });
     }
 
     @Override
@@ -74,13 +95,18 @@ public class Hospital_List_Adapter extends RecyclerView.Adapter<Hospital_List_Ad
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView hospitalName , hospitalAddress , state , phoneNo ;
+        CircleImageView hospital_profile ;
         RelativeLayout hospitalDetail ;
+        ImageButton addDoctor ;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             hospitalName = itemView.findViewById(R.id.hospitalName);
             hospitalAddress = itemView.findViewById(R.id.hospitalAddress);
             phoneNo = itemView.findViewById(R.id.hospitalContactNumber);
             hospitalDetail = itemView.findViewById(R.id.HospitalDetail);
+            hospital_profile = itemView.findViewById(R.id.hospitalImg);
+            addDoctor = itemView.findViewById(R.id.AddDoctors);
         }
     }
 }

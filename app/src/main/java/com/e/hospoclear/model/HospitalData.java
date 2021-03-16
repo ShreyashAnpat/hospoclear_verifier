@@ -2,10 +2,17 @@ package com.e.hospoclear.model;
 
 public class HospitalData {
 
-   private String HospitalName ,ContactNumber , City , State,HospitalImgUrl,UserId , HospitalEmail;
+   private String HospitalName ,ContactNumber , City , State,HospitalImgUrl,UserId , HospitalEmail ,Status;
 
+    public String getStatus() {
+        return Status;
+    }
 
-    public HospitalData(String hospitalName, String contactNumber, String city, String state, String hospitalImgUrl, String userId , String hospitalEmail) {
+    public void setStatus(String status) {
+        Status = status;
+    }
+
+    public HospitalData(String hospitalName, String contactNumber, String city, String state, String hospitalImgUrl, String userId , String hospitalEmail , String status) {
         HospitalName = hospitalName;
         ContactNumber = contactNumber;
         City = city;
@@ -13,6 +20,7 @@ public class HospitalData {
         HospitalImgUrl = hospitalImgUrl;
         UserId = userId;
         HospitalEmail  = hospitalEmail ;
+        Status = status ;
     }
 
     public HospitalData() {

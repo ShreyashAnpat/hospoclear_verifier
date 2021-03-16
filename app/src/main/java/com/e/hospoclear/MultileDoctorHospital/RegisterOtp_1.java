@@ -145,6 +145,7 @@ public class RegisterOtp_1 extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(getContext(), "Hospital Add successfully !!", Toast.LENGTH_SHORT).show();
+                    firebaseAuth.signOut();
                 }
             }
         });

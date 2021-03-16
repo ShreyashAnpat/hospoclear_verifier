@@ -1,8 +1,11 @@
-package com.e.hospoclear.SingleDoctorHospital;
+package com.e.hospoclear.MultileDoctorHospital;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 
 import com.e.hospoclear.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,12 +26,11 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
-import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 import static android.content.ContentValues.TAG;
 
-public class RegisterOtp extends Fragment {
+public class registerOtp_dr extends Fragment {
 
     String mPhoneNumber;
     Button mBtnVerifyOtp;
@@ -41,10 +40,12 @@ public class RegisterOtp extends Fragment {
     String OtpId;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
-
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.register_otp, container, false);
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_register_otp_dr, container, false);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -52,7 +53,7 @@ public class RegisterOtp extends Fragment {
         mGetOtp = view.findViewById(R.id.otp);
         progressBar = view.findViewById(R.id.loader);
 
-        sharedPreferences = getContext().getSharedPreferences("HospitalData",0);
+        sharedPreferences = getContext().getSharedPreferences("DoctorsData",0);
 
         Bundle bundle = this.getArguments();
         if (bundle!=null){
@@ -124,52 +125,19 @@ public class RegisterOtp extends Fragment {
     }
 
     private void AddData() {
-        String HospitalName = sharedPreferences.getString("HospitalName",null);
-        String City = sharedPreferences.getString("City",null);
-        String State = sharedPreferences.getString("State",null);
-        String Number = sharedPreferences.getString("HospitalContactNumber",null);
-        String Ambulance = sharedPreferences.getString("Ambulance",null);
+
         String DoctorName = sharedPreferences.getString("DoctorName",null);
         String Qualification = sharedPreferences.getString("Qualification",null);
         String Experience = sharedPreferences.getString("Experience",null);
         String Speciality = sharedPreferences.getString("Speciality",null);
-
-        HashMap<String, Object> hospitalData = new HashMap<>();
-        hospitalData.put("HospitalName",HospitalName);
-        hospitalData.put("City",City);
-        hospitalData.put("State",State);
-        hospitalData.put("ContactNumber",Number);
-        hospitalData.put("Ambulance",Ambulance);
-        hospitalData.put("TimeStamp",System.currentTimeMillis());
-        hospitalData.put("UserId",firebaseAuth.getCurrentUser().getUid());
-        hospitalData.put("Status" , "Single");
-        hospitalData.put("isUser" , "1");
-
-        firebaseFirestore.collection("Hospitals").document(firebaseAuth.getCurrentUser().getUid())
-                .set(hospitalData).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    Toast.makeText(getContext(), "Hospital Add successfully !!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-        firebaseFirestore.collection("AppUsers").document(firebaseAuth.getCurrentUser().getUid()).set(hospitalData);
-
-        HashMap<String,Object> location = new HashMap<>();
-        location.put("City",City);
-        Log.d(TAG, "AddData: " + City);
-
-
+        String HospitalID = sharedPreferences.getString("HospitalID" , null);
         HashMap<String, Object> doctorData = new HashMap<>();
         doctorData.put("DoctorName",DoctorName);
         doctorData.put("Qualification",Qualification);
         doctorData.put("Experience",Experience);
         doctorData.put("Speciality",Speciality);
         doctorData.put("TimeStamp",System.currentTimeMillis());
-        doctorData.put("HospitalId",firebaseAuth.getCurrentUser().getUid());
+        doctorData.put("HospitalId",HospitalID);
         doctorData.put("isUser" ,"3");
 
         firebaseFirestore.collection("Doctors").document(firebaseAuth.getCurrentUser().getUid())
