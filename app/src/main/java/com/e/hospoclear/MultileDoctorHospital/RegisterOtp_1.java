@@ -138,6 +138,7 @@ public class RegisterOtp_1 extends Fragment {
         hospitalData.put("UserId",firebaseAuth.getCurrentUser().getUid());
         hospitalData.put("Status" , "Multiple");
         hospitalData.put("isUser" , "1");
+        hospitalData.put("MobileNumber" , mPhoneNumber);
 
         firebaseFirestore.collection("Hospitals").document(firebaseAuth.getCurrentUser().getUid())
                 .set(hospitalData).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -144,6 +144,7 @@ public class RegisterOtp extends Fragment {
         hospitalData.put("UserId",firebaseAuth.getCurrentUser().getUid());
         hospitalData.put("Status" , "Single");
         hospitalData.put("isUser" , "1");
+        hospitalData.put("MobileNumber" ,mPhoneNumber);
 
         firebaseFirestore.collection("Hospitals").document(firebaseAuth.getCurrentUser().getUid())
                 .set(hospitalData).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -151,6 +152,9 @@ public class RegisterOtp extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(getContext(), "Hospital Add successfully !!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getContext(), "error", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -162,7 +166,6 @@ public class RegisterOtp extends Fragment {
         location.put("City",City);
         Log.d(TAG, "AddData: " + City);
 
-
         HashMap<String, Object> doctorData = new HashMap<>();
         doctorData.put("DoctorName",DoctorName);
         doctorData.put("Qualification",Qualification);
@@ -170,7 +173,8 @@ public class RegisterOtp extends Fragment {
         doctorData.put("Speciality",Speciality);
         doctorData.put("TimeStamp",System.currentTimeMillis());
         doctorData.put("HospitalId",firebaseAuth.getCurrentUser().getUid());
-        doctorData.put("isUser" ,"3");
+        doctorData.put("MobileNumber" ,mPhoneNumber);
+        doctorData.put("isUser" ,"1");
 
         firebaseFirestore.collection("Doctors").document(firebaseAuth.getCurrentUser().getUid())
                 .set(doctorData).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -179,11 +183,14 @@ public class RegisterOtp extends Fragment {
                 if (task.isSuccessful()){
                     Toast.makeText(getContext(), "Doctor add successfully !!", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
+                    signOut();
+                }
+                if (task.isCanceled()){
+                    Toast.makeText(getContext(), "error", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        signOut();
 
     }
 

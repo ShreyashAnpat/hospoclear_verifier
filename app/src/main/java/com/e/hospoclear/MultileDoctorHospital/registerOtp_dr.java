@@ -145,7 +145,7 @@ public class registerOtp_dr extends Fragment {
         doctorData.put("TimeStamp",System.currentTimeMillis());
         doctorData.put("HospitalId",HospitalID);
         doctorData.put("isUser" ,"3");
-
+        doctorData.put("MobileNumber" , mPhoneNumber);
         firebaseFirestore.collection("Doctors").document(firebaseAuth.getCurrentUser().getUid())
                 .set(doctorData).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
