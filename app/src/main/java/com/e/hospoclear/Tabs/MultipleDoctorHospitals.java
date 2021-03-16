@@ -6,6 +6,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +32,7 @@ public class MultipleDoctorHospitals extends Fragment {
     RecyclerView multipleDoctorHospital ;
     List<HospitalData> hospitalDataList ;
     FirebaseFirestore firebaseFirestore ;
-
+    SwipeRefreshLayout refreshLayout;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,14 +40,28 @@ public class MultipleDoctorHospitals extends Fragment {
         View view = inflater.inflate(R.layout.fragment_multiple_doctor_hospitals, container, false);
 
         multipleDoctorHospital = view.findViewById(R.id.multipleDoctorHospital);
-
+        refreshLayout = view.findViewById(R.id.refreshLayout);
         firebaseFirestore = FirebaseFirestore.getInstance() ;
         hospitalDataList = new ArrayList<>();
-
         multipleDoctorHospital.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new Hospital_List_Adapter(hospitalDataList);
         multipleDoctorHospital.setAdapter(adapter);
 
+        loadData();
+
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshLayout.setRefreshing(true);
+                hospitalDataList.clear();
+                loadData();
+                refreshLayout.setRefreshing(false);
+            }
+        });
+        return  view ;
+    }
+
+    private void loadData() {
         firebaseFirestore.collection("Hospitals").whereEqualTo("Status" ,"Multiple")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -60,6 +75,5 @@ public class MultipleDoctorHospitals extends Fragment {
                         }
                     }
                 });
-        return  view ;
     }
 }

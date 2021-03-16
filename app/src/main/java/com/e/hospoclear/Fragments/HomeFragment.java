@@ -21,6 +21,7 @@ public class HomeFragment extends Fragment {
     TabLayout tabLayout ;
     ViewPager viewPager ;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -67,6 +67,7 @@ public class RegisterOtp_1 extends Fragment {
                     mGetOtp.setError("OTP will be 6 digit");
                 }else {
                     mBtnVerifyOtp.setVisibility(View.INVISIBLE);
+
                     PhoneAuthCredential credential = PhoneAuthProvider.getCredential(OtpId,mGetOtp.getText().toString());
                     signInWithPhoneAuthCredential(credential);
                 }
