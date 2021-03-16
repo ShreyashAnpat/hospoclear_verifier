@@ -81,8 +81,7 @@ public class All_Hospital_Information extends Fragment {
                     editor.putString("HospitalContactNumber", Number);
                     editor.putString("Ambulance", Ambulance);
                     editor.commit();
-
-                    Fragment fragment = new Register_Dr_PhoneNumebr();
+                    Fragment fragment = new RegisterWithNumber();
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
                 }
             }

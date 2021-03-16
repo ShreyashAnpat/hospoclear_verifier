@@ -45,7 +45,6 @@ public class AvailableDoctorsList extends Fragment {
         Bundle bundle = getArguments();
         String HospitalId = bundle.getString("hospitalId");
 
-        Toast.makeText(getContext(),  bundle.getString("hospitalId"), Toast.LENGTH_SHORT).show();
         firebaseFirestore.collection("Doctors").whereEqualTo("HospitalId" , HospitalId).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
