@@ -115,6 +115,7 @@ public class registerOtp_dr extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             AddData();
+                            Log.d(TAG, "onComplete: Yes");
                         } else {
                             mGetOtp.setError("Re-Enter OTP");
                             mBtnVerifyOtp.setVisibility(View.VISIBLE);
@@ -126,11 +127,16 @@ public class registerOtp_dr extends Fragment {
 
     private void AddData() {
 
+        Log.d(TAG, "AddData: Inside Fun");
+        Log.d(TAG, "UserId: " + firebaseAuth.getCurrentUser().getUid());
         String DoctorName = sharedPreferences.getString("DoctorName",null);
         String Qualification = sharedPreferences.getString("Qualification",null);
         String Experience = sharedPreferences.getString("Experience",null);
         String Speciality = sharedPreferences.getString("Speciality",null);
         String HospitalID = sharedPreferences.getString("HospitalID" , null);
+
+        Log.d(TAG, "AddData: " + DoctorName +" \n " + Qualification +" \n " + Experience +" \n " + Speciality +" \n " + HospitalID);
+
         HashMap<String, Object> doctorData = new HashMap<>();
         doctorData.put("DoctorName",DoctorName);
         doctorData.put("Qualification",Qualification);
@@ -147,11 +153,10 @@ public class registerOtp_dr extends Fragment {
                 if (task.isSuccessful()){
                     Toast.makeText(getContext(), "Doctor add successfully !!", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
+                    signOut();
                 }
             }
         });
-
-        signOut();
 
     }
 
