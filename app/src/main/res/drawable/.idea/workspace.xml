@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="737fb7fe-4775-4d4f-923a-a83990463890" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../java/com/e/hospoclear/Adapters/UploadImgAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../java/com/e/hospoclear/MultileDoctorHospital/upload_hospital_image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/camara_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_baseline_add_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ic_baseline_photo_camera_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../layout/fragment_upload_hospital_image.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/e/hospoclear/MultileDoctorHospital/All_Hospital_Information.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/e/hospoclear/MultileDoctorHospital/All_Hospital_Information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/e/hospoclear/Tabs/MultipleDoctorHospitals.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/e/hospoclear/Tabs/MultipleDoctorHospitals.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="1przxEUrVq8EYdUnBhzB2UD50pS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="737fb7fe-4775-4d4f-923a-a83990463890" name="Default Changelist" comment="" />
+      <created>1615956241152</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615956241152</updated>
+    </task>
+    <servers />
+  </component>
+</project>

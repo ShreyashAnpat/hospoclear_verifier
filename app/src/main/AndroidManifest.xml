@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HospoClear">
+
         <activity android:name=".MainActivity"
             android:label="M-Hosp's" android:windowSoftInputMode="adjustResize">
             <intent-filter>

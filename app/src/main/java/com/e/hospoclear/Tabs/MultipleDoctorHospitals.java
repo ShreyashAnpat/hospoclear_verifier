@@ -75,5 +75,6 @@ public class MultipleDoctorHospitals extends Fragment {
                         }
                     }
                 });
+
     }
 }
